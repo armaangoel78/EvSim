@@ -11,23 +11,15 @@ public class Neuron {
 			sum += input[i].getLastOut();
 		}
 		
-		if (sigmoid){
-			output = 1 / (1 + Math.pow(2.7182818284590452353602874713527, -sum));
-			return output;
-		} else {
-			return sum;
-		}
+		output = sigmoid ? 1 / (1 + Math.pow(2.7182818284590452353602874713527, -sum)) : sum;
+		return output;
 	}
 	
 	public double output (double input, boolean sigmoid) {
 		sum = input;
 		
-		if (sigmoid){
-			output = 1 / (1 + Math.pow(2.7182818284590452353602874713527, -sum));
-			return output;
-		} else {
-			return sum;
-		}
+		output = sigmoid ? 1 / (1 + Math.pow(2.7182818284590452353602874713527, -sum)) : sum;
+		return output;
 	}
 	
 	
@@ -37,12 +29,8 @@ public class Neuron {
 			sum += input[i];
 		}
 		
-		if (sigmoid){
-			output = 1 / (1 + Math.pow(2.7182818284590452353602874713527, -sum));
-			return output;
-		} else {
-			return sum;
-		}
+		output = sigmoid ? 1 / (1 + Math.pow(2.7182818284590452353602874713527, -sum)) : sum;
+		return output;
 	}
 	
 	public double output (Synapse[][] input, boolean sigmoid) {
@@ -53,12 +41,8 @@ public class Neuron {
 			}
 		}
 		
-		if (sigmoid){
-			output = 1 / (1 + Math.pow(2.7182818284590452353602874713527, -sum));
-			return output;
-		} else {
-			return sum;
-		}
+		output = sigmoid ? 1 / (1 + Math.pow(2.7182818284590452353602874713527, -sum)) : sum;
+		return output;
 	}
 	
 	public double getLastSum() {

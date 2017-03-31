@@ -11,7 +11,7 @@ public class Network {
 		
 		for (int i = 0; i < neurons.length-1; i++) {
 			neurons[i] = new Neuron_Layer(layout[i], i);
-			synapses[i] = new Synapse_Layer(layout[i], layout[i+1], i);
+			synapses[i] = new Synapse_Layer(layout[i+1], layout[i], i);
 		}
 		neurons[layout.length-1] = new Neuron_Layer(layout[layout.length-1], layout.length-1);
 	}

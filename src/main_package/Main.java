@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		int[] layout = new int[]{1, 2, 3, 1};
-		double[] input = new double[]{3, 34 , 5};
+		double[] input = new double[]{1};
 		Network net = new Network(layout);
 		input = net.getOutput(input);
 		

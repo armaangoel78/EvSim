@@ -16,25 +16,25 @@ public class Neuron_Layer {
 	
 	public double[] push(double[] input, Network network) {
 		for(int i = 0; i < neurons.length; i++) {
-			neurons[i].output(input[i], false);
+			neurons[i].output(input[i], false); //input neurons
 		}
 		
 		return network.synapses[num].push(network);
 	}
 	
 	public double[] push(Network network) {
-		if (num < network.synapses.length) {
+		if (num < network.synapses.length) { //hidden layer neurons
 			for(int i = 0; i < neurons.length; i++) {
-				neurons[i].output(network.synapses[num-1].synapses, true);
+				neurons[i].output(network.synapses[num-1].synapses[i], true);
 			}
 			
 			return network.synapses[num].push(network);
-		} else {
+		} else { //output neurons
 			double[] out = new double[neurons.length];
 			
 			
 			for(int i = 0; i < neurons.length; i++) {
-				out[i] = neurons[i].output(network.synapses[num-1].synapses, true);
+				out[i] = neurons[i].output(network.synapses[num-1].synapses[i], true);
 			}
 			
 			return out;

@@ -19,7 +19,7 @@ public class Synapse_Layer {
 	public double[] push(Network network) {
 		for (int i = 0; i < synapses.length; i++) {
 			for (int x = 0; x < synapses[i].length; x++) {
-				synapses[i][x].getOutput(network.neurons[num].neurons[i]);
+				synapses[i][x].getOutput(network.neurons[num].neurons[x]);
 			}
 		}
 		

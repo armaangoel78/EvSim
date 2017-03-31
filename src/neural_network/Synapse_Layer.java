@@ -45,4 +45,8 @@ public class Synapse_Layer {
 		
 		return network.neurons[num+1].push(network);
 	}
+	
+	public double getWeight(int a, int b) {
+		return synapses[a][b].getWeight();
+	}
 }

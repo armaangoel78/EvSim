@@ -8,31 +8,14 @@ public class Main {
 		int[] layout = new int[]{1, 2, 3, 1};
 		double[] input = new double[]{1};
 		
-		double[][][] weights = new double[][][]
-				{
-					{
-						{2},
-						{2}
-					},
-					
-					{
-						{2, 2},
-						{2, 2},
-						{2, 2}
-					},
-					
-					{
-						{2, 2, 2},
-					}
-			
-				};
-		
-		Network net = new Network(layout, weights, false);
+		Network net = new Network(layout, true);
 		input = net.getOutput(input);
 		
 		for (double i : input) {
 			System.out.println(i);
 		}
+		
+		System.out.println(net.getBianaryForWeights());
 	}
 
 }

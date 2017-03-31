@@ -38,4 +38,22 @@ public class Network {
 		return neurons[0].push(input, this);
 	}
 	
+	public double getWeight(int layer, int a, int b) {
+		return synapses[layer].getWeight(a, b);
+	}
+	
+	public String getBianaryForWeights() {
+		String bianary = "";
+		
+		for (int i = 0; i < synapses.length; i++) {
+			for (int a = 0; a < synapses[i].synapses.length; a++) {
+				for (int b = 0; b < synapses[i].synapses[a].length; b++) {
+					double w = getWeight(i, a, b);
+					bianary += Long.toBinaryString(Double.doubleToRawLongBits(w));
+				}
+			}
+		}
+		
+		return bianary;
+	}
 }

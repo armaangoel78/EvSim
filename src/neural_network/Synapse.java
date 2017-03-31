@@ -1,9 +1,17 @@
 package neural_network;
 
 public class Synapse {
-	private double weight = Math.random();
+	private double weight;
 	private double lastOut;
 	private double input;
+	
+	public Synapse(double weight) {
+		this.weight = weight;
+	}
+	
+	public Synapse() {
+		weight = Math.random();
+	}
 	
 	public void randWeight() {
 		weight = Math.random();

@@ -3,9 +3,11 @@ package neural_network;
 public class Neuron_Layer {
 	public Neuron[] neurons;
 	public int num;
+	private boolean sigmoid;
 	
-	public Neuron_Layer(int size, int num) {
+	public Neuron_Layer(int size, int num, boolean sigmoid) {
 		this.num = num;
+		this.sigmoid = sigmoid;
 	
 		neurons = new Neuron[size];
 		
@@ -25,7 +27,7 @@ public class Neuron_Layer {
 	public double[] push(Network network) {
 		if (num < network.synapses.length) { //hidden layer neurons
 			for(int i = 0; i < neurons.length; i++) {
-				neurons[i].output(network.synapses[num-1].synapses[i], true);
+				neurons[i].output(network.synapses[num-1].synapses[i], sigmoid);
 			}
 			
 			return network.synapses[num].push(network);
@@ -34,7 +36,7 @@ public class Neuron_Layer {
 			
 			
 			for(int i = 0; i < neurons.length; i++) {
-				out[i] = neurons[i].output(network.synapses[num-1].synapses[i], true);
+				out[i] = neurons[i].output(network.synapses[num-1].synapses[i], sigmoid);
 			}
 			
 			return out;

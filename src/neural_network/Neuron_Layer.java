@@ -22,7 +22,7 @@ public class Neuron_Layer {
 		}
 		
 		return network.synapses[num].push(network);
-	}
+	} 
 	
 	public double[] push(Network network) {
 		if (num < network.synapses.length) { //hidden layer neurons

@@ -1,5 +1,7 @@
 package neural_network;
 
+import java.math.BigInteger;
+
 public class Synapse {
 	private double weight;
 	private double lastOut;
@@ -7,6 +9,10 @@ public class Synapse {
 	
 	public Synapse(double weight) {
 		this.weight = weight;
+	}
+	
+	public Synapse(String weight) {
+		this.weight = Double.longBitsToDouble(new BigInteger(weight, 2).longValue());
 	}
 	
 	public Synapse() {

@@ -28,6 +28,22 @@ public class Synapse_Layer {
 		}
 	}
 	
+	public Synapse_Layer (int a, int b, int num, String synapse_weights) {
+		this.num = num;
+		
+		synapses = new Synapse[a][b];
+
+		int index = 0;
+		
+		for (int i = 0; i < a; i++) { 
+			for (int x = 0; x < b; x++) {
+				synapses[i][x] = new Synapse(synapse_weights.substring(index, index+64));
+				index += 64;
+			}
+		}
+	}
+	
+	
 	public void update_weights(double[][] synapse_weights) {
 		for (int i = 0; i < synapses.length; i++) { 
 			for (int x = 0; x < synapses[i].length; x++) {

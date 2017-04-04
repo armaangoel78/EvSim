@@ -60,6 +60,31 @@ public class Network {
 		return neurons[0].push(input, this);
 	}
 	
+	public int getMaxOutputIndex(double[] input) {
+		double[] output = getOutput(input);
+		double max = -1;
+		int maxIndex = 0;
+		for (int i = 0; i < output.length; i++) {
+			if (max < output[i]) {
+				max = output[i];
+				maxIndex = i;
+			}
+		}
+		
+		return maxIndex;
+	}
+	
+	public double getMaxOutputValue(double[] input) {
+		double[] output = getOutput(input);
+		double max = -1;
+		for (int i = 0; i < output.length; i++) {
+			if (max < output[i]) {
+				max = output[i];
+			}
+		}
+		return max;
+	}
+	
 	public double getWeight(int layer, int a, int b) {
 		return synapses[layer].getWeight(a, b);
 	}
